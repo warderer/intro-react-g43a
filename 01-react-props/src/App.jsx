@@ -7,6 +7,7 @@ import tres from './assets/img/tres.jpg'
 import cuatro from './assets/img/cuatro.jpg'
 import cinco from './assets/img/cinco.jpg'
 import seis from './assets/img/seis.jpg'
+import Info from './components/Info'
 
 function App() {
 
@@ -46,12 +47,7 @@ function App() {
       </div>
     </section>
 
-    <section className="info">
-      <div className="contenedor">
-        <h2 className="titulo left">Juntos podemos apoyar</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </section>
+    <Info title="Juntos podemos apoyar" message="Lorem ipsum dolor sit amet consectetur adipisicing elit."/>
 
     <section className="cards contenedor">
       <h2 className="titulo">Our services</h2>
@@ -96,6 +92,8 @@ function App() {
         </article>
       </div>
     </section>
+
+    <Info title="Manda tu trabajo a la Galería" message="Destacate de la competencia al exhibir tu trabajo"/>
 
     <section className="info-last">
       <div className="contenedor last-section">
