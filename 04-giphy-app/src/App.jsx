@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import ImageCard from './components/ImageCard'
+import SearchBar from './components/SearchBar'
+import './App.css'
 
 function App () {
   const [gifs, setGifs] = useState([])
@@ -19,8 +20,19 @@ function App () {
     fetchGifs()
   }, [])
 
+  const sendSearchRequest = async (searchTerm) => {
+    try {
+      const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=20&offset=&rating=g&lang=es&bundle=messaging_non_clips`)
+      const results = await response.json()
+      setGifs(results.data)
+    } catch (error) {
+      console.error('Error searching GIFs:', error)
+    }
+  }
+
   return (
     <div className='App'>
+      <SearchBar handleSearch={sendSearchRequest} />
       <div className='grid-cards'>
         {gifs.map(gif => (
           <ImageCard
