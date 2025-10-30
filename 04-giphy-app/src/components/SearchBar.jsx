@@ -5,8 +5,9 @@ const SearchBar = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('')
 
   return (
-    <div className='search-bar search-input'>
+    <div className='search-bar'>
       <input
+        className='search-input'
         type='text'
         placeholder='Buscar GIFs...'
         value={searchTerm}
